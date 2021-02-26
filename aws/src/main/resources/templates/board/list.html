@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<!-- xhtml 문서를 위해 명시, 생략해도 정상작동 하지만 인텔리에서 타임리프 문법 사용할 때 문법에러 떠서 사용 -->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- HEADER -->
+<div th:insert="/header.html" id="header"></div>
+<!-- th:insrt = jsp의 include -->
+<a th:href="@{/post}">글쓰기</a>
+<table>
+    <thead>
+        <tr>
+            <th>번호</th>
+            <th>글제목</th>
+            <th>작성자</th>
+            <th>작성일</th>
+        </tr>
+    </thead>
+    <tbody>
+    <!-- CONTENTS !-->
+    <tr th:each="board : ${boardList}">
+    <!-- 타임리프에서 반복문 쓸 때, 컨트롤러가 넘겨주는 변수는 ${} 그이깐 boardList는 컨트롤러가 넘겨주는 변수고 그걸 board 변수로 사용해서 속성을 사용할 수 있다 이마리야 -->
+        <td>
+            <span th:text="${board.id}"></span>
+        </td>
+        <td>
+            <a th:href="@{'/post/' + ${board.id}}">
+                <span th:text="${board.title}"></span>
+            </a>
+        </td>
+        <td>
+            <span th:text="${board.writer}"></span>
+        </td>
+        <td>
+            <span th:text="${#temporals.format(board.createdDate, 'yyyy-MM-dd HH:mm')}"></span>
+        <!-- temporals.format() 날짜 포맷팅하는 변수 -->
+        </td>
+    </tr>
+    </tbody>
+</table>
+</table>
+<!-- 타임리프에서 html 속성은 대부분 th: 로 바꿔서 사용가능, @{}는 상대경로 -->
+<!-- FOOTER -->
+<div th:insert="/footer.html" id="footer"></div>
+</body>
+</html>
