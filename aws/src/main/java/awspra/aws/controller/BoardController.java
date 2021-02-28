@@ -34,6 +34,6 @@ public class BoardController {
     public String write(BoardDto boardDto) {
         boardService.savePost(boardDto);
 
-        return "redirect:/";
+        return "redirect:/board";
     }
 }
