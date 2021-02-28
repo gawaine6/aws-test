@@ -21,8 +21,8 @@
     </thead>
     <tbody>
     <!-- CONTENTS !-->
+    <!-- 타임리프에서 반복문 쓸 때, 컨트롤러가 넘겨주는 변수는 ${} 그이깐 boardList는 컨트롤러가 넘겨주는 변수고 그걸                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                board 변수로 사용해서 속성을 사용할 수 있다 이마리야 -->
     <tr th:each="member : ${memberList}">
-        <!-- 타임리프에서 반복문 쓸 때, 컨트롤러가 넘겨주는 변수는 ${} 그이깐 boardList는 컨트롤러가 넘겨주는 변수고 그걸 board 변수로 사용해서 속성을 사용할 수 있다 이마리야 -->
         <td>
             <span th:text="${member.memberNo}"></span>
         </td>
