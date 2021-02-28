@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <!-- xhtml 문서를 위해 명시, 생략해도 정상작동 하지만 인텔리에서 타임리프 문법 사용할 때 문법에러 떠서 사용 -->
 <head>
     <meta charset="UTF-8">
@@ -8,7 +7,6 @@
 </head>
 <body>
 <!-- HEADER -->
-<!--<div th:insert="/header.html" id="header"></div>-->
 <!-- th:insrt = jsp의 include -->
 <a th:href="@{/post}">글쓰기 씨바라</a>
 <table>
@@ -44,6 +42,5 @@
 </table>
 <!-- 타임리프에서 html 속성은 대부분 th: 로 바꿔서 사용가능, @{}는 상대경로 -->
 <!-- FOOTER -->
-<!--<div th:insert="/footer.html" id="footer"></div>-->
 </body>
 </html>
