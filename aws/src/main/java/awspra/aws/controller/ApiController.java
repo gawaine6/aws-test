@@ -13,4 +13,8 @@ public class ApiController {
     public String main() {
         return "main";
     }
+
+    @GetMapping("/a")
+    public String a() {
+        return "a";}
 }
