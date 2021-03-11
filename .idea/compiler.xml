@@ -11,9 +11,6 @@
         <module name="aws.aws.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="aws.aws.main~1" target="11" />
-      <module name="aws.aws.test~1" target="11" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="11" />
   </component>
 </project>
