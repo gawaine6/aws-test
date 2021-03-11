@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class MemberEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long memberNo;
 
     @Column(length = 30, nullable = false)
